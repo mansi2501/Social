@@ -1,30 +1,16 @@
-import { AppBar, Container, Grid, Typography } from "@mui/material";
+import { Route } from "react-router";
 import "./App.css";
 import PostForm from "./components/PostForm";
 import CardData from "./UI/CardData";
+import Navbar from "./UI/Navbar";
 
 function App() {
   return (
-    <Container>
-      <AppBar position="static" className="main_head" color="inherit">
-        <Typography className="heading">Posts</Typography>
-      </AppBar>
-      <Container>
-        <Grid
-          container
-          justify="space-between"
-          alignItems="stretch"
-          spacing={3}
-        >
-          <Grid item xs={12} sm={8}>
-            <CardData />
-          </Grid>
-          <Grid item xs={12} sm={4}>
-            <PostForm />
-          </Grid>
-        </Grid>
-      </Container>
-    </Container>
+    <div>
+      <Navbar />
+      <Route exact path="/" component={CardData} />
+      <Route exact path="/postform" component={PostForm} />
+    </div>
   );
 }
 

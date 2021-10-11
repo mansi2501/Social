@@ -1,49 +1,57 @@
 import React from "react";
-import TextField from "@mui/material/TextField";
-import Button from "@mui/material/Button";
-import Card from "@mui/material/Card";
+import { Grid, Button, TextField, Container } from "@mui/material";
+import post from "../assets/images/post.gif";
+import "./PostForm.css";
 
 const handleSubmit = () => {};
 
 const PostForm = () => {
   return (
-    <Card>
-      <form autoComplete="off" noValidate onSubmit={handleSubmit}>
-        <TextField
-          name="creator"
-          variant="outlined"
-          label="Creator"
-          fullWidth
-        />
-        <TextField name="title" variant="outlined" label="Title" fullWidth />
-        <TextField
-          name="message"
-          variant="outlined"
-          label="Message"
-          fullWidth
-          multiline
-          rows={4}
-        />
-        <TextField
-          name="tags"
-          variant="outlined"
-          label="Tags (coma separated)"
-          fullWidth
-        />
-        <Button
-          variant="contained"
-          color="primary"
-          size="large"
-          type="submit"
-          fullWidth
-        >
-          Submit
-        </Button>
-        <Button variant="contained" color="secondary" size="small" fullWidth>
-          Clear
-        </Button>
-      </form>
-    </Card>
+    <Container maxWidth="sm">
+      <Grid container direction="row" justify="center" className="" xs={12}>
+        <Grid item sm={6}>
+          <img src={post} alt={post} />
+        </Grid>
+        <Grid item sm={6}>
+          <form
+            autoComplete="off"
+            className="post_form"
+            noValidate
+            onSubmit={handleSubmit}
+          >
+            <TextField
+              className="form_textfield"
+              name="title"
+              variant="outlined"
+              label="Title"
+              fullWidth
+            />
+            <TextField
+              name="message"
+              className="form_textfield"
+              variant="outlined"
+              label="Message"
+              fullWidth
+              multiline
+              rows={4}
+            />
+
+            <Button
+              className="button_submit"
+              variant="contained"
+              size="large"
+              type="submit"
+              fullWidth
+            >
+              Submit
+            </Button>
+            <Button variant="contained" size="large" type="reset" fullWidth>
+              Clear
+            </Button>
+          </form>
+        </Grid>
+      </Grid>
+    </Container>
   );
 };
 

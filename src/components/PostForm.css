@@ -1,0 +1,10 @@
+.post_form {
+  padding-top: 150px;
+  width: 500px;
+}
+.form_textfield {
+  margin: 5px 0px !important;
+}
+.button_submit {
+  margin: 20px 0px !important;
+}
