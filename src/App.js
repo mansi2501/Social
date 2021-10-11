@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import { AppBar, Container, Grid, Typography } from "@mui/material";
+import "./App.css";
+import PostForm from "./components/PostForm";
+import CardData from "./UI/CardData";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <Container>
+      <AppBar position="static" className="main_head" color="inherit">
+        <Typography className="heading">Posts</Typography>
+      </AppBar>
+      <Container>
+        <Grid
+          container
+          justify="space-between"
+          alignItems="stretch"
+          spacing={3}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          <Grid item xs={12} sm={8}>
+            <CardData />
+          </Grid>
+          <Grid item xs={12} sm={4}>
+            <PostForm />
+          </Grid>
+        </Grid>
+      </Container>
+    </Container>
   );
 }
 
