@@ -1,0 +1,24 @@
+{
+  "posts": [
+    {
+      "id": 2,
+      "title": "Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
+      "message": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate totam deleniti quia numquam ipsa facilis recusandae accusamus magni, saepe odit maiores animi voluptatem repellat, repudiandae dolorem delectus? Odit, facilis similique!"
+    },
+    {
+      "id": 3,
+      "title": "Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
+      "message": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate totam deleniti quia numquam ipsa facilis recusandae accusamus magni, saepe odit maiores animi voluptatem repellat, repudiandae dolorem delectus? Odit, facilis similique!"
+    },
+    {
+      "id": 4,
+      "title": "Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
+      "message": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate totam deleniti quia numquam ipsa facilis recusandae accusamus magni, saepe odit maiores animi voluptatem repellat, repudiandae dolorem delectus? Odit, facilis similique!"
+    },
+    {
+      "title": "My New Post",
+      "message": "Hello This is my first post",
+      "id": 6
+    }
+  ]
+}

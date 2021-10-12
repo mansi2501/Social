@@ -2,9 +2,15 @@ import React, { useState } from "react";
 import { Grid, Button, TextField, Container } from "@mui/material";
 import postImg from "../assets/images/postImg.gif";
 import "./PostForm.css";
+import { useHistory, useParams } from "react-router";
+import { useDispatch } from "react-redux";
+import { addPost, editUser } from "../redux/Actions/actions";
 
 const PostForm = () => {
   const [post, setPost] = useState({ title: "", message: "" });
+  const { id } = useParams();
+  const history = useHistory();
+  const dispatch = useDispatch();
 
   const InputChange = (event) => {
     setPost({ ...post, [event.target.name]: event.target.value });
@@ -12,18 +18,28 @@ const PostForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
+    // if (!post.title || !post.message) {
+    //   console.log("Please Fill all Values");
+    // }
+
+    if (id) {
+      dispatch(editUser(post, id));
+      history.push("/");
+    } else {
+      dispatch(addPost(post));
+      history.push("/");
+    }
+  };
+
+  const clearData = () => {
+    setPost({ title: "", message: "" });
   };
 
   return (
     <Container>
       <div className="form_card">
-        <Grid
-          container
-          direction="row"
-          justify="flex-between"
-          className=""
-          xs={12}
-        >
+        <Grid container direction="row" justify="flex-between" xs={12}>
           <Grid item sm={6}>
             <img src={postImg} alt="post figure" height="300px" />
           </Grid>
@@ -42,6 +58,7 @@ const PostForm = () => {
                 value={post.title}
                 onChange={InputChange}
                 fullWidth
+                required
               />
               <TextField
                 name="message"
@@ -53,6 +70,7 @@ const PostForm = () => {
                 fullWidth
                 multiline
                 rows={4}
+                required
               />
 
               <Button
@@ -62,9 +80,15 @@ const PostForm = () => {
                 type="submit"
                 fullWidth
               >
-                Submit
+                {id ? "Add Post" : "Update Post"}
               </Button>
-              <Button variant="contained" size="large" type="reset" fullWidth>
+              <Button
+                onClick={clearData}
+                variant="contained"
+                size="large"
+                type="reset"
+                fullWidth
+              >
                 Clear
               </Button>
             </form>
