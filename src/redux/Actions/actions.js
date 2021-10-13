@@ -58,7 +58,7 @@ export const deletePost = (id) => {
   };
 };
 
-export const getSingleUser = (id) => {
+export const getSinglePost = (id) => {
   return function (dispatch) {
     axios
       .get(`http://localhost:4000/posts/${id}`)
@@ -69,7 +69,7 @@ export const getSingleUser = (id) => {
   };
 };
 
-export const editUser = (post, id) => {
+export const editPost = (post, id) => {
   return function (dispatch) {
     axios
       .put(`http://localhost:4000/posts/${id}`, post)

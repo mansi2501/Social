@@ -25,7 +25,7 @@
 .read_data {
   font-size: 14px;
 }
-.read_data a {
+.read_data link {
   text-decoration: none;
   color: gray;
 }

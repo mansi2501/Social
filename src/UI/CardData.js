@@ -37,7 +37,7 @@ const CardData = () => {
       <Grid container>
         {posts &&
           posts.map((post) => (
-            <Grid item md={4} xl={4}>
+            <Grid item md={4} xl={4} key={post.id}>
               <Card className="grid_post" key={post.id}>
                 <CardMedia
                   component="img"
@@ -59,7 +59,7 @@ const CardData = () => {
                     {post.message}
                   </Typography>
                   <span className="read_data">
-                    <Link to={`/postdetail/${post.id}`}>Read More>></Link>
+                    <Link to={`/postdetail/${post.id}`}>Read More</Link>
                   </span>
                 </CardContent>
                 <CardActions>
