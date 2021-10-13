@@ -24,7 +24,7 @@ const postsReducer = (state = initialState, action) => {
     case types.GET_SINGLE_POST:
       return {
         ...state,
-        user: action.payload,
+        post: action.payload,
         loading: false,
       };
     default:

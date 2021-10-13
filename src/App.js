@@ -1,4 +1,4 @@
-import { Route } from "react-router";
+import { Route, Switch } from "react-router";
 import "./App.css";
 import Postdetail from "./components/PostDetail";
 import PostForm from "./components/PostForm";
@@ -9,10 +9,12 @@ function App() {
   return (
     <div>
       <Navbar />
-      <Route exact path="/" component={CardData} />
-      <Route exact path="/postform" component={PostForm} />
-      <Route exact path="/postform/:id" component={PostForm} />
-      <Route path="/postdetail/:id" component={Postdetail} />
+      <Switch>
+        <Route exact path="/" component={CardData} />
+        <Route exact path="/postform" component={PostForm} />
+        <Route exact path="/postform/:id" component={PostForm} />
+        <Route path="/postdetail/:id" component={Postdetail} />
+      </Switch>
     </div>
   );
 }
