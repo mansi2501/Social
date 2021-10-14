@@ -3,29 +3,32 @@
 }
 .icon_class {
   font-size: 2.5rem !important;
+  color: white !important;
 }
 .post_img {
-  opacity: 0.4;
+  opacity: 0.7;
 }
 .grid_post {
   position: relative;
   margin: 30px;
+  background-color: #51065e !important;
+  color: white !important;
 }
 .edit_btn {
   position: absolute !important;
+  color: white !important;
   right: 0;
   top: 0;
 }
 .post_desc {
   overflow: hidden;
+  color: white !important;
   white-space: nowrap;
   text-overflow: ellipsis;
   width: 200px;
 }
-.read_data {
+.read_data a {
   font-size: 14px;
-}
-.read_data link {
   text-decoration: none;
-  color: gray;
+  color: white;
 }

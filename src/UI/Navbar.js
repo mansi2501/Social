@@ -10,7 +10,7 @@ export default function Navbar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
-        <Toolbar>
+        <Toolbar className="navbar">
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             <NavLink className="links" to="/">
               Posts
@@ -19,7 +19,7 @@ export default function Navbar() {
           <NavLink className="links" to="/">
             Home
           </NavLink>
-          <NavLink className="links" to="/postform">
+          <NavLink className="links" to="/addpost">
             Add Post
           </NavLink>
         </Toolbar>
