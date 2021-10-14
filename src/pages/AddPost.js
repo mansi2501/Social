@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream:src/pages/AddPost.js
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
@@ -7,11 +8,31 @@ import postImg from "../assets/images/postImg.gif";
 import "./styles.css";
 
 const initialState = { title: "", message: "" };
+=======
+import React, { useState, useEffect } from "react";
+import { Grid, Button, TextField, Container, Typography } from "@mui/material";
+import postImg from "../assets/images/postImg.gif";
+import "./PostForm.css";
+import { useHistory, useParams } from "react-router";
+import { useDispatch, useSelector } from "react-redux";
+import { addPost, editPost, getSinglePost } from "../redux/Actions/actions";
+>>>>>>> Stashed changes:src/components/PostForm.js
 
 const Addpost = () => {
   const [post, setPost] = useState(initialState);
   const history = useHistory();
   const dispatch = useDispatch();
+  const postData = useSelector((state) => state.data.post);
+
+  useEffect(() => {
+    dispatch(getSinglePost(id));
+  }, [dispatch, id]);
+
+  useEffect(() => {
+    if (postData) {
+      setPost({ ...postData });
+    }
+  }, [postData]);
 
   const InputChange = (event) => {
     setPost({ ...post, [event.target.name]: event.target.value });
@@ -19,9 +40,20 @@ const Addpost = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+<<<<<<< Updated upstream:src/pages/AddPost.js
     dispatch(addPost(post));
     history.push("/");
     clearData();
+=======
+
+    if (id) {
+      dispatch(editPost(post, id));
+      history.push("/");
+    } else {
+      dispatch(addPost(post));
+      history.push("/");
+    }
+>>>>>>> Stashed changes:src/components/PostForm.js
   };
 
   const clearData = () => {
@@ -42,6 +74,9 @@ const Addpost = () => {
               noValidate
               onSubmit={handleSubmit}
             >
+              <Typography variant="h6">
+                {id ? "Edit Post" : "Add a Post"}
+              </Typography>
               <TextField
                 className="form_textfield"
                 name="title"
@@ -70,7 +105,11 @@ const Addpost = () => {
                 type="submit"
                 fullWidth
               >
+<<<<<<< Updated upstream:src/pages/AddPost.js
                 Add Post
+=======
+                Submit
+>>>>>>> Stashed changes:src/components/PostForm.js
               </Button>
               <Button
                 className="button_clear"

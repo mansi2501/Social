@@ -10,12 +10,18 @@ function App() {
   return (
     <div>
       <Navbar />
+<<<<<<< Updated upstream
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/addpost" component={Addpost} />
         <Route exact path="/editpost/:id" component={UpdatePost} />
         <Route path="/postdetail/:id" component={Postdetail} />
       </Switch>
+=======
+      <Route exact path="/" component={CardData} />
+      <Route exact path="/postform" component={PostForm} />
+      <Route exact path="/postform/:id" component={PostForm} />
+>>>>>>> Stashed changes
     </div>
   );
 }

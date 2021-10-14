@@ -1,6 +1,7 @@
 {
   "posts": [
     {
+<<<<<<< Updated upstream
       "title": "kamil",
       "message": "kamil message update",
       "id": 1
@@ -9,6 +10,16 @@
       "title": "dfdfd",
       "message": "dfdfd",
       "id": 2
+=======
+      "title": "kamil updated",
+      "message": "hgfvhjkuyvwrdflegvbhjveludsbbsviudfhbvjsfkbsjxzdkgbrsljfubilsvghiludflskbvlikviubgh",
+      "id": 3
+    },
+    {
+      "id": 4,
+      "title": "Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
+      "message": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate totam deleniti quia numquam ipsa facilis recusandae accusamus magni, saepe odit maiores animi voluptatem repellat, repudiandae dolorem delectus? Odit, facilis similique!"
+>>>>>>> Stashed changes
     }
   ]
 }
