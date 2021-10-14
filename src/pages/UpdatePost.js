@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from "react";
-import { Grid, Button, TextField, Container, Typography } from "@mui/material";
-import postImg from "../assets/images/postImg.gif";
-import "./PostForm.css";
-import { useHistory, useParams } from "react-router";
+import React, { useState, useEffect } from "react";
+import { Grid, Button, TextField, Container } from "@mui/material";
+import { getSinglePost, editPost } from "../redux/Actions/actions";
+import { useHistory, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { addPost, editPost, getSinglePost } from "../redux/Actions/actions";
+import postImg from "../assets/images/postImg.gif";
+import "./styles.css";
 
 const initialState = { title: "", message: "" };
 
-const PostForm = () => {
+const Updatepost = () => {
   const [post, setPost] = useState(initialState);
   const { id } = useParams();
   const history = useHistory();
@@ -23,7 +23,7 @@ const PostForm = () => {
     if (postData) {
       setPost({ ...postData });
     }
-  }, [postData, id]);
+  }, [postData]);
 
   const InputChange = (event) => {
     setPost({ ...post, [event.target.name]: event.target.value });
@@ -31,20 +31,14 @@ const PostForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
-    if (id) {
-      dispatch(editPost(post, id));
-      history.push("/");
-    } else {
-      dispatch(addPost(post));
-      history.push("/");
-    }
+    dispatch(editPost(post, id));
+    history.push("/");
+    clearData();
   };
 
   const clearData = () => {
     setPost(initialState);
   };
-
   return (
     <Container>
       <div className="form_card">
@@ -59,9 +53,6 @@ const PostForm = () => {
               noValidate
               onSubmit={handleSubmit}
             >
-              <Typography variant="h6">
-                {id ? "Edit Post" : "Add a Post"}
-              </Typography>
               <TextField
                 className="form_textfield"
                 name="title"
@@ -92,9 +83,10 @@ const PostForm = () => {
                 type="submit"
                 fullWidth
               >
-                {id ? "Update" : "Add "}
+                Edit
               </Button>
               <Button
+                className="button_clear"
                 onClick={clearData}
                 variant="contained"
                 size="large"
@@ -111,4 +103,4 @@ const PostForm = () => {
   );
 };
 
-export default PostForm;
+export default Updatepost;

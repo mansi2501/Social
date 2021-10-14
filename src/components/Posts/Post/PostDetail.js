@@ -1,6 +1,6 @@
 import React from "react";
 import { Card, CardContent, CardMedia, Typography } from "@mui/material";
-import { useParams } from "react-router";
+import { useParams } from "react-router-dom";
 
 const Postdetail = () => {
   const { id } = useParams();
